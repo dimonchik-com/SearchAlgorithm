@@ -1,2 +1,0 @@
-# SearchAlgorithm
-Created with CodeSandbox
