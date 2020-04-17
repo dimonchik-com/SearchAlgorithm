@@ -3,8 +3,7 @@ export const hasValidPath = room => {
     indexMove: 0,
     row: 0,
     visitedPlaces: new Set(),
-    possibleTurn: new Set(),
-    status: null
+    possibleTurn: new Set()
   };
 
   const endRoom = nextTurn => {
@@ -20,7 +19,7 @@ export const hasValidPath = room => {
   };
 
   const getNextTurn = () => {
-    // поскольку речь не идет о производительности, получаю любой ход
+    //получаем любой ход
     if (currentPosition.possibleTurn.size) {
       const it = currentPosition.possibleTurn.values();
       const first = it.next();
@@ -50,7 +49,7 @@ export const hasValidPath = room => {
     const [currentRow, currentRowIndex] = [room[row], row];
     const [nextRow, nextRowIndex] = [room[row + 1], row + 1];
 
-    // ищем все возможные ходы
+    // ищем в следующем ряду
     if (nextRow) {
       const fromWeGoing =
         nextRow[indexMove - 1] !== undefined ? indexMove - 1 : indexMove;
